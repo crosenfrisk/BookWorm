@@ -17,7 +17,7 @@ const startServer = async() => {
     context: authMiddleware
   });
   await server.start();
-  server.applyMiddleWare({ app });
+  server.applyMiddleware({ app });
   console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
 }
 
