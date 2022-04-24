@@ -29,13 +29,6 @@ const httpLink = createHttpLink({
   uri: '/graphql',
 });
 
-// Use the ApolloClient constructor to instantiate the Apollo Client instance and create the connection to the API endpoint. 
-// By using the new InMemoryCache() function we instantiate a new cache object as well.
-const client = new ApolloClient({
-  link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
-});
-
 // Creates a middleware function that will retrieve the token for us and combine it with the existing httpLink 
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem('id_token');
@@ -45,6 +38,13 @@ const authLink = setContext((_, { headers }) => {
       authorization: token ? `Bearer ${token}` : '',
     },
   };
+});
+
+// Use the ApolloClient constructor to instantiate the Apollo Client instance and create the connection to the API endpoint. 
+// By using the new InMemoryCache() function we instantiate a new cache object as well.
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
 });
 
 function App() {
