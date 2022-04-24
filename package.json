@@ -1,7 +1,7 @@
 {
   "name": "googlebooks-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "![License for README](https://img.shields.io/badge/license-MIT-green/)",
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
@@ -9,10 +9,21 @@
     "install": "cd server && npm i && cd ../client && npm i",
     "build": "cd client && npm run build"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crosenfrisk/BookWorm.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/crosenfrisk/BookWorm/issues"
+  },
+  "homepage": "https://github.com/crosenfrisk/BookWorm#readme",
   "devDependencies": {
     "concurrently": "^5.1.0"
+  },
+  "dependencies": {
+    "apollo-server-express": "^2.15.0"
   }
 }
