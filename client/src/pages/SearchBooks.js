@@ -5,14 +5,11 @@ import Auth from '../utils/auth';
 import { searchGoogleBooks } from '../utils/API';
 import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
 
-// Use the Apollo useMutation() Hook to execute the SAVE_BOOK mutation in the handleSaveBook() function 
-// instead of the saveBook() function imported from the API file.
 import { useMutation, useQuery } from '@apollo/client';
 import { SAVE_BOOK } from '../utils/mutations';
 import { GET_ME } from '../utils/queries';
 
 const SearchBooks = () => {
-  
   const [saveBook, { data, loading, error }] = useMutation(SAVE_BOOK, {
     refetchQueries: [GET_ME]
   });
@@ -66,6 +63,8 @@ const SearchBooks = () => {
     }
   };
 
+// Use the Apollo useMutation() Hook to execute the SAVE_BOOK mutation in the handleSaveBook() function 
+// instead of the saveBook() function imported from the API file.
   // create function to handle saving a book to our database
   const handleSaveBook = async (bookId) => {
 
