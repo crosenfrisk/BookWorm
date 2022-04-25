@@ -3,7 +3,7 @@ import { gql } from '@apollo/client';
 // This will execute the 'me' query set up using Apollo Server in typeDefs.js.
 
 export const GET_ME = gql`
-  {
+  query me {
     me {
       _id
       username
