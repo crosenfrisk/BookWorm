@@ -37,7 +37,7 @@ const SignupForm = () => {
 
     try {
       // refactored try...catch with addUser and const token.
-      await addUser({
+      const user = await addUser({
         variables: userFormData});
 
       const token = user.data.addUser.token;
