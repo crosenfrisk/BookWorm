@@ -16,7 +16,7 @@ const startServer = async() => {
     resolvers,
     context: authMiddleware
   });
-  await server.start();
+  // await server.start(); required for v3 of Apollo Server
   server.applyMiddleware({ app });
   console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
 }

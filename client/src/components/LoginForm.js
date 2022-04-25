@@ -38,7 +38,7 @@ const LoginForm = () => {
 
     try {
       // refactored try...catch with addUser and const token.
-      await loginUser({
+      const user = await loginUser({
         variables: userFormData
       });
 
